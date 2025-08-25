@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" 
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./Css/responsive.css">
+    <style>
+        #main {
+            padding: 0px;
+            background-color: #f8f9fa;
+        }
+        body {
+            background: url(../Img/pc.svg) no-repeat top;
+
+        }
+        .carousel-item{
+            height: 90vh;
+        }
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .card {
+            margin: 10px;
+            width: 18rem;
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            text-align: center;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .card-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .container-news, .container-events, .container-socialmedia, .container-talents {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }   
+        h2 {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            color: rgba(45,75, 112, 0.8);
+            margin: 50px 0 30px;
+        }
+        .header-link {
+            font-weight: bold;
+            color: #333;
+        }
+        .header-link:hover {
+            color: #007bff;
+        }
+        
+        .header-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-box img {
+            width: 30px;
+            height: 30px;
+        }
+        .item-box {
+            text-align: center;
+        }
+        .item-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .item-box h5 {
+            font-size: 1.2rem;
+            font-weight: bold;
+        } 
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            
+        }
+                  
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./Img/hybuoilogo.jpg" alt="Error" width="150" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarContent" aria-controls="navbarContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-4">
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="http://127.0.0.1:5500/Html/news.html#">NEWS</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./Html/stream.html">SOCIAL MEDIA</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./Html/talents.html">TALENTS</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./Html/events.html">EVENTS</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./Html/merchs.html">MERCHS</a>
+                        </li>
+ 
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
+                        <li class="nav-item header-box">
+                            <a class="nav-link" href="./Html/merchs.html">
+                                <img src="./Img/official-store-cart.svg" alt="" width="20">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary border-0" href="./Html/login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="">
+                    <img src="./Img/indextxt.png" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="">
+                    <img src="./Img/jhopeindex.png" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="">
+                    <img src="./Img/blifauindex.png" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="">
+                    <img src="./Img/bhauindex.png"  class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </main>
+    <h2>NEWS</h2>
+    <div class="container-news">
+           <div class="card" style="width: 18rem;">
+                <a href="https://www.youtube.com/watch?v=IcwHopeT5gY&list=RDIcwHopeT5gY&start_radio=1" target="_blank">
+                <img src="./Img/new/beautifulstrgmvcover.jpeg" class="card-img-top" alt="Beautiful Strangers">
+                </a>
+                <div class="card-body">
+                <p class="card-text">TXT (투모로우바이투게더) 'Beautiful Strangers' Official MV</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <a href="https://www.youtube.com/watch?v=He7IomOuYXU" target="_blank">
+                <img src="./Img/new/lesseepscvr.png" class="card-img-top" alt="LE SSERAFIM">
+                </a>
+                <div class="card-body">
+                <p class="card-text">[EPISODE] LE SSERAFIM (르세라핌) ‘DIFFERENT (English ver.)’ Music Show Behind</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <a href="https://www.youtube.com/watch?v=sM8cNSE5E5o">
+                <img src="https://img.youtube.com/vi/sM8cNSE5E5o/hqdefault.jpg" class="card-img-top" alt="ILLIT">
+                </a>
+                <div class="card-body">
+                    <p class="card-text">ILLIT (아일릿) 'Toki Yo Tomare' Concept Film - Home Playing ver.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <a href="https://www.youtube.com/watch?v=CjnB56tSCQI&list=RDCjnB56tSCQI&start_radio=1">
+                <img src="https://img.youtube.com/vi/CjnB56tSCQI/hqdefault.jpg" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <p class="card-text">KATSEYE (캣츠아이) "Gabriela" Official MV</p>
+                </div>
+            </div>
+          
+    </div>
+    <h2>SOCIAL MEDIA</h2>
+    <div class="container-socialmedia">
+        <div class="card">
+            <div class="card-header">
+                ENHYPEN
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">WEVERSE</h5>
+                <p class="card-text">Enhypen: Weverse Live</p>
+                <a href="https://weverse.io/enhypen/live" target="_blank" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                LE SSERAFIM
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">YOUTUBE</h5>
+                <p class="card-text">LE SSERAFIM Official Youtube 르세라핌 공식 유튜브</p>
+                <a href="https://www.youtube.com/channel/UCs-QBT4qkj_YiQw1ZntDO3g" target="_blank" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                TWS
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">TIKTOK</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                BTS
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">INSTAGRAM</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+
+    </div>
+    <h2>TALENTS</h2>
+    <div class="container-talents">
+        <div class="card col-md-3 col-12">
+            <img src="./Img/profile pics/mauhauhoicung.jpeg" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+            <div class="card-body item-box">
+                <p>KIM CHAEWON</p>
+                <h5 class="card-title">LE SSERAFIM</h5>
+                <a href="#" class="btn btn-primary">----></a>
+            </div>
+        </div>
+         <div class="card col-md-3 col-12">
+            <img src="./Img/profile pics/xibunhoangson.png" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+            <div class="card-body item-box">
+                <p>CHOI SOOBIN</p>
+                <h5 class="card-title">TOMOROWXTOGHETER</h5>
+                <a href="#" class="btn btn-primary">----></a>
+            </div>
+        </div>
+         <div class="card col-md-3 col-12">
+            <img src="./Img/profile pics/JAYHYUN-.jpeg" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+            <div class="card-body item-box">
+                <p>YANG JUNGWON</p>
+                <h5 class="card-title">ENHYPEN</h5>
+                <a href="#" class="btn btn-primary">----></a>
+            </div>
+        </div>
+         <div class="card col-md-3 col-12">
+            <img src="./Img/profile pics/skibiditoilet.jpeg" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+            <div class="card-body item-box">
+                <p>MUNG JAEHYUN</p>
+                <h5 class="card-title">BOYNEXTDOOR</h5>
+                <a href="#" class="btn btn-primary">----></a>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" 
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/responsive.css">
+     <style>
+        .header_current::after {
+            background-image: linear-gradient(84.75deg, #00e8a2, #00a3ff 23.7%, #b61cff 57.86%, #ea193e 87.24%, #fdc500);
+            opacity: 1;
+        }
+         .container > h2 {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            color: rgba(38, 64, 95, 0.878);
+            padding: 50px 0 30px;
+        }
+
+        .filter-bar .container-fluid {
+            height: 3rem;
+        }
+
+        .filter-bar-section {
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            background-color: rgba(45,75, 112, 0.1);
+            border-radius: 4rem;
+            box-shadow: inset 0 2 8 rgba(45,45,45,.07);
+        }
+
+        .col-button-input{
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            height: 3rem;
+        }
+
+        .col-button-input-checkbox {
+            display: none;
+        }
+
+        .col-button-input-checkbox+.col-button-input-lable {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 3rem;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .col-button-input-checkbox+.col-button-input-lable:hover, .col-button-input-checkbox:checked+.col-button-input-lable {
+            background: linear-gradient(84.75deg,#00e8a2,#00a3ff 23.7%,#b61cff 57.86%,#ea193e 87.24%,#fdc500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .button_news::before{
+            width: 20%;
+        }
+
+        .filter-bar-section::before{
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            content: "";
+            background-color: #fff;
+            border-radius: 40px;
+            box-shadow: 0 10px 24px rgba(45,45,45,.1);
+            transition: transform .3s ease-in-out 0s;
+        }
+
+        .filter-bar-section.all-selected::before {
+            transform: translateX(0);
+        }
+        .filter-bar-section.album-selected::before {
+            transform: translateX(100%);
+        }
+        .filter-bar-section.single-selected::before {
+            transform: translateX(200%);
+        }
+        .filter-bar-section.tour-selected::before {
+            transform: translateX(300%);
+        }
+        .filter-bar-section.concert-selected::before {
+            transform: translateX(400%);
+        }
+        .card {
+            min-width: 324px;
+            background-color: rgba(45,75, 112, 0.1);
+            border: none;
+            margin: 32px 32px;
+            box-shadow: 0 2px 8px rgba(45,45,45,.07);
+            border-radius: 20px;
+        }
+        .card-img-top {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d4b70;
+        }
+        .card-text {
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+        .item-box .btn-primary {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+        }
+        .item-box .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+     <header id="header">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Img/hybuoilogo.jpg" alt="Error" width="150" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarContent" aria-controls="navbarContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-4">
+                        <li class="nav-item header-link header_current">
+                            <a class="nav-link" href="./news.html">NEWS</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./stream.html">SOCIAL MEDIA</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./talents.html">TALENTS</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./events.html">EVENTS</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./merchs.html">MERCHS</a>
+                        </li>
+ 
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
+                        <li class="nav-item header-box">
+                            <a class="nav-link" href="./merchs.html">
+                                <img src="../Img/official-store-cart.svg" alt="" width="20">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary border-0" href="./login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="container">
+            <h2>NEWS</h2>
+            <div class="filter-bar">
+                <div class="container-fluid text-center">
+                    <section class="row filter-bar-section button_news all-selected">
+                        <div class="col-button-input">
+                            <input type="checkbox" id="all" class="col-button-input-checkbox" checked disabled>
+                            <label for="all" class="col-button-input-lable">ALL</label>
+                        </div>
+                        <div class="col-button-input">
+                            <input type="checkbox" id="album" class="col-button-input-checkbox">
+                            <label for="album" class="col-button-input-lable">ALBUM</label>
+                        </div>
+                        <div class="col-button-input">
+                            <input type="checkbox" id="single" class="col-button-input-checkbox">
+                            <label for="single" class="col-button-input-lable">SINGLE</label>
+                        </div>
+                        <div class="col-button-input">
+                            <input type="checkbox" id="tour" class="col-button-input-checkbox">
+                            <label for="tour" class="col-button-input-lable">TOUR</label>
+                        </div>
+                        <div class="col-button-input">
+                            <input type="checkbox" id="concert" class="col-button-input-checkbox">
+                            <label for="concert" class="col-button-input-lable">SOLO</label>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 section-all section-album">
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/fromis9-albcver.jpg" class="card-img-top" alt="1st Album ‘Unlock My World’">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">1st Album ‘Unlock My World’</h5>
+                            <p class="card-text">FROMIS_9</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/tgheteralbum-cover.jpg" class="card-img-top" alt="The Star Chapter: TOGETHER">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">'The Star Chapter: TOGETHER'</h5>
+                            <p class="card-text">TOMOROW X TOGHETER</p>
+                            <a href="https://ibighit.com/txt/jpn/discography/detail/together/" target="_blank" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/twsalbcver.jpg" class="card-img-top" alt="2nd Mini Album 'SUMMER BEAT!'">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">2nd Mini Album 'SUMMER BEAT!</h5>
+                            <p class="card-text">TWS</p>
+                            <a href="https://www.pledis.co.kr/en/artist/detail/TWS/discography/" target="_blank" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 section-all section-single">
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center">
+                   <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/Love Language.jpeg" class="card-img-top" alt="Single: Love Language">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">Single: Love Language</h5>
+                            <p class="card-text">TOMOROW X TOGHETER</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/Different-Single-Cover.png" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">Japan single: DIFFERENT</h5>
+                            <p class="card-text">LE SSERAFIM</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/Loosesinglecover.webp" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">Digital Single: LOOSE</h5>
+                            <p class="card-text">ENHYPEN</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 section-all section-tour">
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/tour/ACTPROMISE.jpg" class="card-img-top" alt="TOMOROWXTOGHETER WORLD TOUR: ACT: PROMISE">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">TOMOROWXTOGHETER WORLD TOUR: ACT: PROMISE</h5>
+                            <p class="card-text">---ASIA--NORTH AMERICA--EUROPE---</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/tour/SVTtourfollow.webp" class="card-img-top" alt="SEVENTEEN TOUR: FOLLOW">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">SEVENTEEN TOUR: FOLLOW</h5>
+                            <p class="card-text">---ASIA---</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/tour/easycrazyhottour.png" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">LE SSERAFIM: EASY CRAZY HOT TOUR</h5>
+                            <p class="card-text">---ASIA--NORTH AMERICA--EUROPE---</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 section-all section-concert">
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/jhopesolo.jpg" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">JACK IN THE BOX</h5>
+                            <p class="card-text">J-HOPE</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/ggummixtapecover.jpg" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">Mixtape:GGUM</h5>
+                            <p class="card-text">YEONJUN</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/AgustDalbcover.png" class="card-img-top" alt="EASY CRAZY HOT TOUR">
+                        <div class="card-body item-box">
+                            <h5 class="card-title">AGUST D</h5>
+                            <p class="card-text">SUGA</p>
+                            <a href="#" class="btn btn-primary">GETS INFORMATION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/main.js"></script>
+</body>
+</html>

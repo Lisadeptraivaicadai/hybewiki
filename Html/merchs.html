@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERCHS</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" 
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/responsive.css">
+<style>
+        .header_current::after {
+            background-image: linear-gradient(84.75deg, #00e8a2, #00a3ff 23.7%, #b61cff 57.86%, #ea193e 87.24%, #fdc500);
+            opacity: 1;
+        }
+        .container > h2 {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            color: rgba(45,75, 112, 0.8);
+            padding: 50px 0 30px;
+        }
+
+        .filter-bar .container-fluid {
+            height: 3rem;
+        }
+
+        .filter-bar-section {
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            background-color: rgba(45,75, 112, 0.1);
+            border-radius: 4rem;
+            box-shadow: inset 0 2 8 rgba(45,45,45,.07);
+        }
+
+        .col-button-input{
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            height: 3rem;
+        }
+
+        .col-button-input-checkbox {
+            display: none;
+        }
+
+        .col-button-input-checkbox+.col-button-input-lable {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 3rem;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .col-button-input-checkbox+.col-button-input-lable:hover, .col-button-input-checkbox:checked+.col-button-input-lable {
+            background: linear-gradient(84.75deg,#00e8a2,#00a3ff 23.7%,#b61cff 57.86%,#ea193e 87.24%,#fdc500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .button_news::before{
+            width: 20%;
+        }
+
+        .filter-bar-section::before{
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            content: "";
+            background-color: #fff;
+            border-radius: 40px;
+            box-shadow: 0 10px 24px rgba(45,45,45,.1);
+            transition: transform .3s ease-in-out 0s;
+        }
+
+        .filter-bar-section.all-selected::before {
+            transform: translateX(0);
+        }
+        .filter-bar-section.album-selected::before {
+            transform: translateX(100%);
+        }
+        .filter-bar-section.single-selected::before {
+            transform: translateX(200%);
+        }
+        .filter-bar-section.tour-selected::before {
+            transform: translateX(300%);
+        }
+        .filter-bar-section.concert-selected::before {
+            transform: translateX(400%);
+        }
+        .card {
+            margin: 30px 20px;
+            background-color: rgba(45,75, 112, 0.1);
+            border: none;
+            display: flex;
+            width: 18rem;
+            box-shadow: 0 2px 8px rgba(45,45,45,.07);
+            border-radius: 20px;
+        }
+        .card-img-top {
+            border-radius: 20px 20px 0 0;
+            height: 300px;
+            object-fit: cover;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d4b70;
+        }
+       
+       
+      
+    </style>
+</head>
+<body>
+     <header id="header">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Img/hybuoilogo.jpg" alt="Error" width="150" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarContent" aria-controls="navbarContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-4">
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./news.html">NEWS</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./stream.html">SOCIAL MEDIA</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./talents.html">TALENTS</a>
+                        </li>
+                        <li class="nav-item header-link">
+                            <a class="nav-link" href="./events.html">EVENTS</a>
+                        </li>
+                        <li class="nav-item header-link header_current">
+                            <a class="nav-link" href="./merchs.html">MERCHS</a>
+                        </li>
+ 
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
+                        <li class="nav-item header-box">
+                            <a class="nav-link" href="./merchs.html">
+                                <img src="../Img/official-store-cart.svg" alt="" width="20">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary border-0" href="./login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="container">
+            <h2>MERCHS</h2>      
+            <div class="filter-bar">
+                <div class="container-fluid text-center">
+                    <section class="row filter-bar-section button_news all-selected">
+                        <div class="col-button-input">
+                            <input type="checkbox" id="all" class="col-button-input-checkbox" checked disabled>
+                            <label for="all" class="col-button-input-lable">ALL</label>
+                        </div>
+                        <div class="col-button-input">
+                            <input type="checkbox" id="album" class="col-button-input-checkbox">
+                            <label for="album" class="col-button-input-lable">ALBUM</label>
+                        </div>
+                        <div class="col-button-input">
+                            <input type="checkbox" id="single" class="col-button-input-checkbox">
+                            <label for="single" class="col-button-input-lable">MEMBERSHIP</label>
+                        </div>
+                        <div class="col-button-input">
+                            <input type="checkbox" id="tour" class="col-button-input-checkbox">
+                            <label for="tour" class="col-button-input-lable">TOUR-MERCHS</label>
+                        </div>
+                        <div class="col-button-input">
+                            <input type="checkbox" id="concert" class="col-button-input-checkbox">
+                            <label for="concert" class="col-button-input-lable">DK/SSG/PTB</label>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container my-5 section-all section-album">
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/alb/txt the star chap-tmr.png" class="card-img-top" alt="The Star Chapter: TOGHETHER">
+                        <div class="card-body">
+                            <h5 class="card-title">The Star Chapter: TOGHETHER</h5>
+                            <p class="card-text">$47.92 (SET 3)</p>
+                            <section>
+                             <a href="https://shop.weverse.io/en/shop/JPY/artists/3/sales/41390" target="_blank" class="btn btn-primary" >PRE-ORDER</a>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/HOTALB.png" class="card-img-top" alt="5th Mini Album: HOT">
+                        <div class="card-body">
+                            <h5 class="card-title">5th Mini Album 'HOT' (Random)</h5>
+                            <p class="card-text">$15.50</p>
+                            <section>
+                             <a href="https://shop.weverse.io/en/shop/JPY/artists/50/sales/36861" target="_blank" class="btn btn-primary" >BUY NOW</a>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/NJZHowSwt.png" class="card-img-top" alt="How Sweet: New Jeans">
+                        <div class="card-body">
+                            <h5 class="card-title">NewJeans 'How Sweet' Standard ver. </h5>
+                            <p class="card-text">$76.96 (SET 3)</p>
+                            <section>
+                             <a href="https://shop.weverse.io/en/shop/JPY/artists/82/sales/25497" target="_blank" class="btn btn-primary" >BUY NOW</a>
+                            </section>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 section-all section-single">
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/ARMYMBS.png" class="card-img-top" alt="BTS ARMY MEMBERSHIP">
+                        <div class="card-body">
+                            <h5 class="card-title">ARMY MEMBERSHIP</h5>
+                            <p class="card-text">$19.67/year</p>
+                            <a href="#" class="btn btn-primary">BUY NOW</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/EN-MBS.png" class="card-img-top" alt="ENHYPEN ENGENE MEMBERSHIP">
+                        <div class="card-body">
+                            <h5 class="card-title">ENGENE MEMBERSHIP</h5>
+                            <p class="card-text">$19.67/year</p>
+                            <a href="#" class="btn btn-primary">BUY NOW</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/ILLIT_MBS.png" class="card-img-top" alt="GILLIT MEMBERSHIP">
+                        <div class="card-body">
+                            <h5 class="card-title">GILLIT MEMBERSHIP</h5>
+                            <p class="card-text">$19.67/year</p>
+                            <a href="#" class="btn btn-primary">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 section-all section-tour">
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/FATETshirt.png" class="card-img-top" alt="FATE+ T-Shirt">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour Routing T-Shirt (FATE+)'</h5>
+                            <p class="card-text">$35.41 (with exc. photocard)</p>
+                            <a href="https://shop.weverse.io/en/shop/USD/artists/10/sales/30551" class="btn btn-primary">BUY NOW</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/BNDTOURME.png" class="card-img-top" alt="BND POSTER">
+                        <div class="card-body">
+                            <h5 class="card-title">POSTER (Exclusive)</h5>
+                            <p class="card-text">$11.80</p>
+                            <a href="https://shop.weverse.io/en/shop/USD/artists/112/sales/33502" class="btn btn-primary">BUY NOW</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/PTCPOUCHLE.png" class="card-img-top" alt="=PTC POUCH">
+                        <div class="card-body">
+                            <h5 class="card-title">Photo Card Pouch Set</h5>
+                            <p class="card-text">$11.01</p>
+                            <a href="https://shop.weverse.io/en/shop/USD/artists/50/sales/37445" class="btn btn-primary">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 section-all section-concert">
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/TXTSSGT2025.png" class="card-img-top" alt="TOMOROWXTOGHETER 2025 SEASON'S GREETINGS">
+                        <div class="card-body">
+                            <h5 class="card-title">TOMOROWXTOGHETER 2025 SEASON'S GREETINGS</h5>
+                            <p class="card-text">$35.41</p>
+                            <a href="#" class="btn btn-primary">BUY NOW</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/TXTDecokit2025.png" class="card-img-top" alt="HOT">
+                        <div class="card-body">
+                            <h5 class="card-title">TOMOROWXTOGHETER 2025 DECO KIT</h5>
+                            <p class="card-text">$23.61</p>
+                            <a href="#" class="btn btn-primary">BUY NOW</a>                         
+                        </div>
+                    </div>
+                    <div class="card col-md-3 col-12">
+                        <img src="../Img/Merch/LENIPTB.png" class="card-img-top" alt="LENIPTB">
+                        <div class="card-body">
+                            <h5 class="card-title">LENIVERSE PHOTOBOOK:FIMbidi-Bobbidi-Boo</h5>
+                            <p class="card-text">$19.67</p>
+                            <a href="#" class="btn btn-primary">BUY NOW</a> 
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+    </main>
+    <script src="../js/main.js"></script>
+</body>
+</html>

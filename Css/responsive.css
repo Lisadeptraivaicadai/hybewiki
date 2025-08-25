@@ -1,0 +1,8 @@
+@media screen and (max-width: 992px){
+    .header-link::after{
+        width: 20%;
+    }
+    .header-box{
+        padding-left: 8px;
+    }
+}
